@@ -17,12 +17,17 @@
             <span class="glyphicon glyphicon-user"></span>
             <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li>
-              <a href="#" title="Profile"><%= t ".profile" %></a>
-            </li>
-            <li>
-              <a href="#" title="Logout"><%= t ".logout" %></a>
-            </li>
+            <% if user_signed_in? %>
+              <li><%= link_to (t "profile"), "#" %></li>
+              <li><%= link_to (t "edit"), edit_user_registration_path %></li>
+              <li><%= link_to (t "static_page.sign_out"),
+                destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to (t "static_page.signup"),
+                new_user_registration_path %></li>
+              <li><%= link_to (t "static_page.signin"),
+                new_user_session_path %></li>
+            <% end %>
           </ul>
         </li>
       </ul>
