@@ -21,3 +21,19 @@
 
 en:
   hello: "Hello world"
+  static_page:
+    home: "Home"
+    signup: "Sign up"
+    signin: "Sign in"
+    logout: "Logout"
+    category: "Category"
+    title: "Food and Drink"
+    about: "About"
+    contact: "Contact"
+    user: "User Name"
+    settings: "Settings"
+    profile: "Profile"
+    view_cart: "View Cart"
+    contact: "Contact Us"
+    features: "Features"
+    search: "Search"

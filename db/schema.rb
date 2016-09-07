@@ -88,9 +88,9 @@ ActiveRecord::Schema.define(version: 20160907060228) do
     t.boolean  "gender"
     t.string   "password_digest"
     t.string   "avatar"
-    t.integer  "role",            default: 0
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer  "role"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
