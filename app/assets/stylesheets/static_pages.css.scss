@@ -1,0 +1,75 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+ul.dropdown-cart{
+  min-width:250px;
+}
+ul.dropdown-cart li .item{
+  display:block;
+  padding:3px 10px;
+  margin: 3px 0;
+}
+ul.dropdown-cart li .item:hover{
+  background-color:#f3f3f3;
+}
+ul.dropdown-cart li .item:after{
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+ul.dropdown-cart li .item-left{
+  float:left;
+}
+ul.dropdown-cart li .item-left img,
+ul.dropdown-cart li .item-left span.item-info{
+  float:left;
+}
+ul.dropdown-cart li .item-left span.item-info{
+  margin-left:10px;
+}
+ul.dropdown-cart li .item-left span.item-info span{
+  display:block;
+}
+ul.dropdown-cart li .item-right{
+  float:right;
+}
+ul.dropdown-cart li .item-right button{
+  margin-top:14px;
+}
+.page-content{
+  padding-top: 60px;
+}
+
+.user-drop{
+  color:#777;
+  margin-top: 5px;
+}
+.footer{
+  text-align:center;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  width:100%;
+  background:#999;
+}
+.footer img{
+  display:inline-block;
+}
+ul.footer_nav{
+  padding:0;
+  margin:1em 0;
+  list-style:none;
+}
+ul.footer_nav li{
+  display:inline-block;
+}
+ul.footer_nav li a:hover{
+  text-decoration:none;
+  color: #ee4a02;
+}
+ul.footer_nav li a {
+  margin: 0 4px;
+}
