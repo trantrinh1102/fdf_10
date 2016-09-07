@@ -1,0 +1,6 @@
+<%= simple_form_for @category, url: url do |f| %>
+  <%= f.input :name, class: "form-control" %>
+  <%= f.input :description, class: "form-control" %>
+  <%= f.button :submit, t(".save"),
+    class: "btn btn-primary col-md-1 col-md-offset-5" %>
+<% end %>
