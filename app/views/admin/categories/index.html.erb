@@ -1,0 +1,34 @@
+<div class="content-page-admin">
+  <h2 class="text-center"><%= t ".title" %></h2>
+  <div class="flash-massage"></div>
+  <%= render "search_form" %>
+    <div class="mg-bt-10 pull-right">
+      <%= link_to  t(".new"), new_admin_category_path,
+        class: "btn btn btn-primary" %>
+    </div>
+    <table class="table table-bordered" id="table-category">
+      <thead>
+        <tr>
+          <th><%= t ".number_order" %></th>
+          <th><%= t ".name" %></th>
+          <th><%= t ".description" %></th>
+          <th><%= t ".created_at" %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @categories.each_with_index do |category, index| %>
+          <tr>
+            <td>
+              <%= number_order params[:page] , index %>
+            </td>
+            <td><%= category.name %></td>
+            <td><%= category.description %></td>
+            <td><%= l category.created_at, format: :short_date %></td>
+            <td></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <%= paginate @categories, theme: "twitter-bootstrap-3" %>
+</div>

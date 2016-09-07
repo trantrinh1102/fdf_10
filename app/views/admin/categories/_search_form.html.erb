@@ -1,0 +1,13 @@
+<div class="row mg-bt-10">
+  <div class="col-md-6">
+    <%= search_form_for @q, url: admin_categories_path do |f| %>
+      <div class="input-group col-md-8">
+        <%= f.search_field :name_cont_any,
+          class: "form-control", placeholder: t(".search") %>
+        <span class="input-group-btn">
+          <%= f.submit  class: "btn btn-danger" %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+</div>
