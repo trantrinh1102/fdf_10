@@ -12,13 +12,13 @@ gem "jbuilder",     "2.2.3"
 gem "bootstrap-sass", "3.2.0.0"
 gem "sdoc", "0.4.0", group: :doc
 gem "autoprefixer-rails"
-gem "carrierwave",             "0.10.0"
-gem "mini_magick",             "3.8.0"
 gem "simple_form"
 gem "kaminari"
 gem "config"
 gem "bootstrap-kaminari-views"
 gem "ransack"
+gem "carrierwave", "~> 0.10.0"
+gem "mini_magick", "~> 4.3"
 
 group :development, :test do
   gem "sqlite3",     "1.3.9"

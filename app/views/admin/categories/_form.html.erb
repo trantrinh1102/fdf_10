@@ -1,4 +1,4 @@
-<%= simple_form_for @category, url: url do |f| %>
+<%= simple_form_for [:admin, @category] do |f| %>
   <%= f.input :name, class: "form-control" %>
   <%= f.input :description, class: "form-control" %>
   <%= f.button :submit, t(".save"),

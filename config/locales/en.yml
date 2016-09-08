@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  image_size: "should be less than 500KB"
   flash:
     success:
       create: "create successfully!"
@@ -64,3 +65,16 @@ en:
       destroy:
         success: "destroy successfully!"
         danger: "You can not delete this category because it is being used!"
+    products:
+      index:
+        number_order: "No."
+        name: "Name"
+        description: "Description"
+        created_at: "Created at"
+        image: "Image"
+        title: "List products"
+        category: "Category"
+      search:
+        placeholder: "Search"
+      form:
+        save: "Save"
