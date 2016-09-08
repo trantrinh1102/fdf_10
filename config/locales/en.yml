@@ -23,6 +23,9 @@ en:
   flash:
     success:
       create: "create successfully!"
+      update: "update successfully!"
+  danger:
+    category_not_exist: "category not exist"
   hello: "Hello world"
   static_page:
     home: "Home"
@@ -58,3 +61,6 @@ en:
         description: "Description"
         created_at: "Created at"
         new: "Add new"
+      destroy:
+        success: "destroy successfully!"
+        danger: "You can not delete this category because it is being used!"
