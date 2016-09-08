@@ -1,23 +1,76 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-3 pull-left">
-      <div class="well hidden-xs hidden-sm" id="search-menu">
-        <form class="form-inline">
-          <div class="form-group">
-            <label for="exampleInputName2"><%= t ".category" %></label>
-            <select class="form-control">
-              <option></option>
-              <option></option>
-            </select>
+<div class="page-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <%= render "search" %>
+        <div class="panel panel-default">
+          <div class="panel-heading"><b><%= t ".title" %></b></div>
+          <div class="list-categories">
+            <% @categories.each do |category| %>
+              <%= link_to category.name,
+                root_path(params: {"q[category_id_eq]" => category}),
+                class: "list-group-item" %>
+            <% end %>
           </div>
-          <div class="form-group">
-            <label for="exampleInputEmail2"></label>
-            <input class="form-control">
-          </div>
-          <button type="submit" class="btn btn-default">
-            <%= t ".search" %></button>
-        </form>
+        </div>
       </div>
+
+      <div class="col-md-9">
+        <div class="row carousel-holder row-slide">
+          <div class="col-md-12">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                  <div class="item active">
+                    <img class="slide-image" src="/assets/slide1.jpg" alt="">
+                  </div>
+                  <div class="item">
+                    <img class="slide-image" src="/assets/slide2.jpg" alt="">
+                  </div>
+                  <div class="item">
+                    <img class="slide-image" src="/assets/slide3.jpg" alt="">
+                  </div>
+              </div>
+              <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <% @products.each do |product| %>
+            <div class="col-sm-4 col-lg-4 col-md-4">
+              <div class="thumbnail">
+                <img src="<%= product.image.thumb.url %>" alt="">
+                <div class="caption">
+                  <h4 class="pull-right">$ <%= product.price %></h4>
+                  <h4><a href="#"><%= product.name %></a>
+                  </h4>
+                  <p><%= product.description %></p>
+                </div>
+                <div class="ratings">
+                  <p>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <%= paginate @products, theme: "twitter-bootstrap-3" %>
     </div>
   </div>
 </div>

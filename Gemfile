@@ -20,7 +20,7 @@ gem "ransack"
 gem "carrierwave", "~> 0.10.0"
 gem "mini_magick", "~> 4.3"
 gem "devise"
-gem "cancancan",                 "1.10"
+gem "cancancan", "1.10"
 
 group :development, :test do
   gem "sqlite3",     "1.3.9"
