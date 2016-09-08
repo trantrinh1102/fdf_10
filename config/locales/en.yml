@@ -27,6 +27,7 @@ en:
       update: "update successfully!"
   danger:
     category_not_exist: "category not exist"
+    product_not_exist: "product not exist"
   hello: "Hello world"
   static_page:
     home: "Home"
@@ -78,3 +79,8 @@ en:
         placeholder: "Search"
       form:
         save: "Save"
+      edit:
+        title: "Edit product"
+      destroy:
+        success: "destroy successfully!"
+        danger: "You can not delete this products because it is being used!"
