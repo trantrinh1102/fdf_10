@@ -25,7 +25,13 @@
             <td><%= category.name %></td>
             <td><%= category.description %></td>
             <td><%= l category.created_at, format: :short_date %></td>
-            <td></td>
+            <td class="text-center">
+              <%= link_to edit_admin_category_path(category) do %>
+                <i class="text-primary glyphicon glyphicon-edit"> </i>
+              <% end %>
+              <a class="btn-delete-category" data-value="<%= category.id %>">
+                <i class="text-danger glyphicon glyphicon-trash"></i></a>
+            </td>
           </tr>
         <% end %>
       </tbody>
