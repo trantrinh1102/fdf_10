@@ -1,0 +1,38 @@
+<div class="content-page-admin">
+  <h2 class="text-center"><%= t ".title" %></h2>
+  <div class="flash-massage"></div>
+  <%= render "search" %>
+    <div class="mg-bt-10 pull-right">
+      <%= link_to  t(".new"), new_admin_product_path,
+        class: "btn btn btn-primary" %>
+    </div>
+    <table class="table table-bordered" id="table-product">
+      <thead>
+        <tr>
+          <th><%= t ".number_order" %></th>
+          <th><%= t ".category" %></th>
+          <th><%= t ".name" %></th>
+          <th><%= t ".description" %></th>
+          <th><%= t ".created_at" %></th>
+          <th><%= t ".image" %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each_with_index do |product, index| %>
+          <tr>
+            <td>
+              <%= number_order params[:page] , index %>
+            </td>
+            <td><%= product.category.try(:name) %></td>
+            <td><%= product.name %></td>
+            <td><%= product.description %></td>
+            <td><%= l product.created_at, format: :short_date %></td>
+            <td><%= image_tag product.image.thumb.url %></td>
+            <td></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <%= paginate @products, theme: "twitter-bootstrap-3" %>
+</div>

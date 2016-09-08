@@ -3,7 +3,7 @@
     <%= search_form_for [:admin, @q] do |f| %>
       <div class="input-group col-md-8">
         <%= f.search_field :name_cont_any,
-          class: "form-control", placeholder: t(".search") %>
+          class: "form-control", placeholder: t(".placeholder") %>
         <span class="input-group-btn">
           <%= f.submit  class: "btn btn-danger" %>
         </span>
