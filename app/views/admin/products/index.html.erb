@@ -24,12 +24,18 @@
             <td>
               <%= number_order params[:page] , index %>
             </td>
-            <td><%= product.category.try(:name) %></td>
+            <td><%= product.category.try :name %></td>
             <td><%= product.name %></td>
             <td><%= product.description %></td>
             <td><%= l product.created_at, format: :short_date %></td>
             <td><%= image_tag product.image.thumb.url %></td>
-            <td></td>
+            <td class="text-center">
+              <%= link_to edit_admin_product_path product do %>
+                <i class="text-primary glyphicon glyphicon-edit"> </i>
+              <% end %>
+              <a class="btn-delete-product" data-value="<%= product.id %>">
+                <i class="text-danger glyphicon glyphicon-trash"></i></a>
+            </td>
           </tr>
         <% end %>
       </tbody>
