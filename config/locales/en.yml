@@ -28,6 +28,7 @@ en:
   danger:
     category_not_exist: "category not exist"
     product_not_exist: "product not exist"
+    user_not_exist: "User not exist"
   hello: "Hello world"
   static_page:
     home: "Home"
@@ -84,3 +85,13 @@ en:
       destroy:
         success: "destroy successfully!"
         danger: "You can not delete this products because it is being used!"
+  users:
+    information: "Information"
+    name: "Name"
+    email: "Email"
+    created: "created"
+    modified: " Modified"
+    phone: "Phone"
+    gender: "Gender"
+    female: "Female"
+    Male: "Male"
