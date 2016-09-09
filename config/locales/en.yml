@@ -32,7 +32,7 @@ en:
     home: "Home"
     signup: "Sign up"
     signin: "Sign in"
-    logout: "Logout"
+    sign_out: "Sign out"
     category: "Category"
     title: "Food and Drink"
     about: "About"
