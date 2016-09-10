@@ -1,0 +1,43 @@
+<% provide :title, t("admin.users.users") %>
+<div class="content-page-admin">
+  <h2 class="text-center"><%= t ".title" %></h2>
+  <%= render "search_form" %>
+  <div class="mg-bt-10 pull-right">
+    <%= link_to  t("admin.users.new"), new_admin_user_path,
+      class: "btn btn btn-primary" %>
+  </div>
+  <div class="flash-massage"></div>
+  <table class="table table-bordered" id="table-users">
+    <thead>
+      <tr>
+        <th><%= t "admin.users.number_order" %></th>
+        <th><%= t ".name" %></th>
+        <th><%= t ".email" %></th>
+        <th><%= t ".phone" %></th>
+        <th><%= t ".gender" %></th>
+        <th><%= t ".avatar" %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each_with_index do |user, index| %>
+        <tr id="user-<%= user.id %>">
+          <td><%= number_order params[:page], index %></td>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.phone %></td>
+          <td><%= user.gender ? t(".female") : t(".male") %></td>
+          <td><%= image_tag user.avatar.thumb.url %></td>
+          <td class="text-center">
+            <%= link_to edit_admin_user_path user do %>
+              <i class="text-primary glyphicon glyphicon-edit"> </i>
+            <% end %>
+            <a class="btn-delete-user" data-value="<%= user.id %>">
+              <i class="text-danger glyphicon glyphicon-trash"></i></a>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @users, theme: "twitter-bootstrap-3" %>
+</div>

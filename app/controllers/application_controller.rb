@@ -25,4 +25,15 @@ class ApplicationController < ActionController::Base
         :password_confirmation, :current_password, :phone, :gender, :avatar
     end
   end
+
+  def authenticate_admin!
+    unless current_user.admin?
+      flash[:notice] = t "flash.danger.admin"
+      redirect_to root_url
+    end
+  end
+
+  def authenticate!
+    redirect_to root_url unless current_user
+  end
 end
