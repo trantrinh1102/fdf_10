@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     root "users#index"
     resources :categories
     resources :products
+    resources :users
   end
 end
