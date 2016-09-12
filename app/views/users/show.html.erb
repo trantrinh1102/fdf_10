@@ -1,0 +1,96 @@
+<div class="col-md-6 col-md-offset-3">
+  <h1 class="text-center"><%= t "static_page.profile" %></h1>
+  <div class="container bootstrap snippet">
+    <div class="panel-body inf-content">
+      <div class="row">
+        <div class="col-md-2">
+          <%= image_tag @user.avatar.thumb.url, class: "style_image" %>
+        </div>
+        <div class="col-md-5">
+          <strong><%= t "users.information" %></strong><br>
+          <div class="table-responsive">
+            <table class="table table-condensed table-responsive
+              table-user-information">
+              <tbody>
+                <tr>
+                  <td>
+                    <strong>
+                      <span class="glyphicon glyphicon-user text-primary">
+                      </span>
+                      <%= t "users.name" %>
+                    </strong>
+                  </td>
+                  <td class="text-primary">
+                    <%= @user.name %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>
+                      <span class="glyphicon glyphicon-envelope text-primary">
+                      </span>
+                      <%= t "users.email" %>
+                    </strong>
+                  </td>
+                  <td class="text-primary">
+                    <%= @user.email %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>
+                      <span class="glyphicon glyphicon-envelope text-primary">
+                      </span>
+                      <%= t "users.phone" %>
+                    </strong>
+                  </td>
+                  <td class="text-primary">
+                    <%= @user.phone %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>
+                      <span class="glyphicon glyphicon-envelope text-primary">
+                      </span>
+                      <%= t "users.gender" %>
+                    </strong>
+                  </td>
+                  <td class="text-primary">
+                    <%= @user.gender ? t("users.female") : t("users.male") %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>
+                      <span class="glyphicon glyphicon-calendar text-primary">
+                      </span>
+                      <%= t "users.created" %>
+                    </strong>
+                  </td>
+                  <td class="text-primary">
+                    <%= @user.created_at.strftime(
+                      I18n.t "time.formats.short_date") %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>
+                      <span class="glyphicon glyphicon-calendar text-primary">
+                      </span>
+                      <%= t "users.modified" %>
+                    </strong>
+                  </td>
+                  <td class="text-primary">
+                    <%= @user.updated_at.strftime(
+                      I18n.t "time.formats.short_date") %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
