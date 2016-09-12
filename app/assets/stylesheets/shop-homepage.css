@@ -12,6 +12,15 @@ body {
   width: 800px;
 }
 
+.total-cart{
+  margin-bottom: 20px;
+}
+
+.image-shop{
+  width: 350px;
+  height: 300px;
+}
+
 .row-slide{
   margin-right: 0px !important;
   margin-left: 0px !important;

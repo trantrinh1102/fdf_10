@@ -20,6 +20,19 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  delete: "x"
+  layouts:
+    cart:
+      add: "+"
+      sub: "-"
+  carts:
+    listing:
+      product: "Product"
+      quantity: "Quantity"
+      price: "Price"
+      add: "+"
+      sub: "-"
+      total: "Total"
   image_size: "should be less than 500KB"
   product_suggests:
     form:
@@ -46,6 +59,7 @@ en:
   static_pages:
     home:
       title: "List category"
+      add_to_card: "Add cart"
     search:
       title: "Search products"
       name: "name"
