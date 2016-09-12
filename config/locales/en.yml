@@ -85,6 +85,7 @@ en:
       destroy:
         success: "destroy successfully!"
         danger: "You can not delete this products because it is being used!"
+
   users:
     information: "Information"
     name: "Name"
@@ -95,3 +96,15 @@ en:
     gender: "Gender"
     female: "Female"
     Male: "Male"
+  products:
+    product: "Product"
+    quantity: "Quantity"
+    price: "Price"
+    status: "Status:"
+    description: "Description:"
+  comment:
+    comment: "Comments"
+    btn_post: "Post"
+    placeholder: "comment"
+  cart:
+    btn_cart: "Add too cart"
