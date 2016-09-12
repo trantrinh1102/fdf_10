@@ -30,6 +30,13 @@ en:
     product_not_exist: "product not exist"
     user_not_exist: "User not exist"
   hello: "Hello world"
+  static_pages:
+    home:
+      title: "List category"
+    search:
+      title: "Search products"
+      name: "name"
+      price: "price"
   static_page:
     home: "Home"
     signup: "Sign up"
