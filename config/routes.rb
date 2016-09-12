@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   resources :products, only: [:show]
+  resources :comments
   namespace :admin do
     root "users#index"
     resources :categories
