@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root "static_pages#home"
   resources :users, only: [:show]
+  resources :product_suggests, only: [:new, :show, :create]
 
   resources :products, only: [:show]
   resources :comments

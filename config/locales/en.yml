@@ -21,6 +21,14 @@
 
 en:
   image_size: "should be less than 500KB"
+  product_suggests:
+    form:
+      save: "Save"
+    show:
+      product: "Product Name"
+      back: "Back"
+    new:
+      title: "New product suggest"
   flash:
     success:
       create: "create successfully!"
@@ -32,6 +40,7 @@ en:
     product_not_exist: "product not exist"
     user_not_exist: "User not exist"
     admin: "You have not permission"
+    product_suggest_exist: "Product suggest exist"
 
   hello: "Hello world"
   static_pages:
