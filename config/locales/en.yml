@@ -121,6 +121,7 @@ en:
     price: "Price"
     status: "Status:"
     description: "Description:"
+    rate: "Original Score:"
   comment:
     comment: "Comments"
     btn_post: "Post"

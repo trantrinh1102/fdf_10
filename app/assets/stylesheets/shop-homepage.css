@@ -37,7 +37,7 @@ body {
   white-space: nowrap;
 }
 
-.thumbnail img {
+.img-product img {
   width: 100%;
 }
 
@@ -51,7 +51,7 @@ body {
   padding: 0;
 }
 
-.thumbnail img {
+.img-product img {
   width: 250px;
 }
 .thumbnail .caption-full {

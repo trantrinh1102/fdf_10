@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users
   root "static_pages#home"
   resources :users, only: [:show]
