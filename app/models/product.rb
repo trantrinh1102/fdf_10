@@ -8,6 +8,8 @@ class Product < ActiveRecord::Base
   validate :image_size_validation
   validates :name, :price, :category_id, presence: true
 
+  ratyrate_rateable "rate"
+
   private
 
   def image_size_validation

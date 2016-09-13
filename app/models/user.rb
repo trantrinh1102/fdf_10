@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   validates :name, presence: true, length: {maximum: 50}
   enum role: [:user, :admin]
 
+  ratyrate_rater
+
   def is_user? user
     self == user
   end

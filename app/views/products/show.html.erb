@@ -2,6 +2,9 @@
   <div class="row">
     <div class="col-md-5 ">
       <span class="image-product"><%= image_tag @product.image.url %></span>
+      <div id="hintDiv"></div>
+      <%= rating_for @product, "rate", enable_half: true, target: '#hintDiv',
+        targetType: "hint", targetText: t("products.rate") %>
       <div class="status-upload" id="comments">
         <p><%= t "comment.comment" %></p>
         <%= render "comments/form_comment", object: @product %>
@@ -10,7 +13,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-6">
       <table class="table table-hover">
         <thead>
           <tr>
