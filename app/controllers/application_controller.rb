@@ -4,8 +4,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :initialize_cart
 
   private
+
+  def initialize_cart
+    @cart = Cart.build_from_hash session
+  end
 
   def after_sign_out_path_for resource
     request.referrer || root_path

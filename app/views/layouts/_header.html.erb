@@ -57,23 +57,16 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"
             role="button" aria-expanded="false">
             <span class="glyphicon glyphicon-shopping-cart"></span>
-            <%= t "Items" %><span class="caret"></span></a>
+            <%= t "Items" %>
+            (<span class="items-count"><%= @cart.count %></span>)
+            <span class="caret"></span>
+          </a>
           <ul class="dropdown-menu dropdown-cart" role="menu">
-            <li>
-              <span class="item">
-                <span class="item-left">
-                  <img src="http://lorempixel.com/50/50/" alt="" />
-                  <span class="item-info">
-                    <span></span>
-                  </span>
-                </span>
-                <span class="item-right">
-                  <button class="btn btn-xs btn-danger pull-right">x</button>
-                </span>
-              </span>
-            </li>
+            <%= render "layouts/cart" %>
             <li class="divider"></li>
-            <li><a class="text-center" href=""><%= t ".view_cart" %></a></li>
+            <li>
+              <%= link_to t(".view_cart"), carts_path, class: "text-center" %>
+            </li>
           </ul>
         </li>
       </ul>

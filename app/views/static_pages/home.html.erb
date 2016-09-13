@@ -54,9 +54,14 @@
                 </div>
                 <div class="caption">
                   <h4 class="pull-right">$ <%= product.price %></h4>
-                  <h4><a href="#"><%= product.name %></a>
-                  </h4>
-                  <p><%= product.description %></p>
+                  <h4><a href="#"><%= product.name %></a></h4>
+                </div>
+                <div class="bt-add-card">
+                  <%= link_to cart_path(product), remote: true,
+                    method: "PUT", class: "pull-right btn btn-primary" do %>
+                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                    <%= t ".add_to_card" %>
+                  <% end %>
                 </div>
                 <div class="ratings">
                   <p><%= rating_for product, "rate", enable_half: true %></p>
