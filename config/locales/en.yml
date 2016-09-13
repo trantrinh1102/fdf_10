@@ -26,6 +26,7 @@ en:
       create: "create successfully!"
       update: "update successfully!"
       delete: "Delete successfully!"
+      error: "cannot comment"
   danger:
     category_not_exist: "category not exist"
     product_not_exist: "product not exist"
@@ -124,5 +125,8 @@ en:
     comment: "Comments"
     btn_post: "Post"
     placeholder: "comment"
+    posted: "Posted by"
+    about: "about"
+    ago: "ago"
   cart:
     btn_cart: "Add too cart"
