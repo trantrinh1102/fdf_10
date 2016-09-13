@@ -1,0 +1,8 @@
+<%= simple_form_for @product_suggest, html: {multipart: true} do |f| %>
+  <%= f.input :product_name, class: "form-control" %>
+  <%= f.input :category_id, collection: @categories, class: "form-control" %>
+  <%= f.input :description, class: "form-control" %>
+  <%= f.input :image, class: "form-control" %>
+  <%= f.button :submit, t(".save"),
+    class: "btn btn-primary col-md-1 col-md-offset-5" %>
+<% end %>
