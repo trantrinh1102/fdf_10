@@ -1,0 +1,16 @@
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= l order.created_at, format: :short_date %>
+      <span class="label label-warning"><%= order.status %></span>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+       <%= render "order_items", order_items: order.order_items %>
+      <div class="pull-right">
+        <h4><b><%= t ".total" %>: </b><%= number_to_currency order.total_pay %></h4>
+      </div>
+    </div>
+  </div>
+</div>

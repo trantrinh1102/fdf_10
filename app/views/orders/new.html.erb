@@ -1,0 +1,17 @@
+<div class="page-content">
+  <% if @cart.present? %>
+    <div class="container">
+      <div class="row">
+        <%= render "order_items", order_items: @cart.items %>
+        <div class="pull-right">
+          <h4><b><%= t ".total" %>: </b>
+            <%= number_to_currency @cart.total_price %></h4>
+        </div>
+      </div>
+      <%= simple_form_for @order do |f| %>
+        <%= f.input :shipping_address, class: "form-control" %>
+        <%= f.submit data: {confirm: t(".confirm")}, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
