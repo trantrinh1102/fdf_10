@@ -80,6 +80,7 @@ en:
     contact: "Contact Us"
     features: "Features"
     search: "Search"
+    btn-fb: "Sign in with Facebook"
   time:
     formats:
       short_date: "%m/%d/%Y"

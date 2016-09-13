@@ -22,6 +22,8 @@ gem "mini_magick", "~> 4.3"
 gem "devise"
 gem "cancancan", "1.10"
 gem "ratyrate"
+gem "omniauth"
+gem "omniauth-facebook"
 
 group :development, :test do
   gem "sqlite3",     "1.3.9"
