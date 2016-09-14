@@ -5,6 +5,7 @@
       <div id="hintDiv"></div>
       <%= rating_for @product, "rate", enable_half: true, target: '#hintDiv',
         targetType: "hint", targetText: t("products.rate") %>
+      <%= social_share_button_tag @product.name %>
       <div class="status-upload" id="comments">
         <p><%= t "comment.comment" %></p>
         <%= render "comments/form_comment", object: @product %>
