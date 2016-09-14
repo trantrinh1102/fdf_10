@@ -46,6 +46,7 @@ en:
       image: "Image"
       quantity: "Quantity"
       price: "Price"
+      list: "List orders"
     listing:
       total: "Total pay"
     new:
