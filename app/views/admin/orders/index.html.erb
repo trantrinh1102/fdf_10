@@ -1,0 +1,49 @@
+<div class="content-page-admin">
+  <h2 class="text-center"><%= t ".title" %></h2>
+  <div class="flash-massage"></div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th><%= t ".number_order" %></th>
+          <th><%= t ".created_at" %></th>
+          <th><%= t ".user" %></th>
+          <th><%= t ".shipping_address" %></th>
+          <th><%= t ".total_pay" %></th>
+          <th><%= t ".status" %></th>
+          <th><%= t ".update_status" %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @orders.each_with_index do |order, index| %>
+          <tr>
+            <td>
+              <%= number_order params[:page] , index %>
+            </td>
+            <td><%= l order.created_at, format: :short_date %></td>
+            <td><%= order.user.name %></td>
+            <td><%= order.shipping_address %></td>
+            <td><%= number_to_currency order.total_pay %></td>
+            <td>
+              <div class="order-status-<%= order.id %>">
+                <%= label_to_status order %>
+              </div>
+            </td>
+            <td class="col-md-1">
+              <select  class="form-control status-order">
+                <% Order.statuses.keys.each do |status| %>
+                  <%= option_status status, order %>
+                <% end %>
+              </select>
+            </td>
+            <td class="text-center">
+              <%= link_to admin_order_path order do %>
+                <i class="text-primary glyphicon glyphicon-eye-open"> </i>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <%= paginate @orders, theme: "twitter-bootstrap-3" %>
+</div>
