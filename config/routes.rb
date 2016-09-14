@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
   root "static_pages#home"
@@ -14,5 +15,6 @@ Rails.application.routes.draw do
     resources :categories
     resources :products
     resources :users
+    resources :orders
   end
 end

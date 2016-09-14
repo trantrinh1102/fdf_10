@@ -1,0 +1,29 @@
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= l order.created_at, format: :short_date %>
+      <div class="col-md-1 pull-right">
+        <div class="order-status-<%= order.id %>">
+          <%= label_to_status order %>
+        </div>
+      </div>
+      <div class="col-md-2 pull-right">
+        <select  class="form-control status-order">
+          <% Order.statuses.keys.each do |status| %>
+            <%= option_status status, order %>
+          <% end %>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= render "orders/order_items", order_items: order.order_items %>
+      <div class="pull-right">
+        <h4>
+          <b><%= t ".total" %>: </b><%= number_to_currency order.total_pay %>
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>

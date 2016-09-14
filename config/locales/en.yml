@@ -101,6 +101,18 @@ en:
     formats:
       short_date: "%m/%d/%Y"
   admin:
+    orders:
+      index:
+        number_order: "No."
+        created_at: "Created at"
+        user: "User"
+        shipping_address: "Shipping address"
+        total_pay: "Total pay"
+        status: "status"
+        update_status: "Update status"
+        title: "Manage orders"
+      listing:
+        total: "Total pay"
     categories:
       categories: "Categories"
       new:

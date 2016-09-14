@@ -1,0 +1,1 @@
+$('.order-status-<%= @order.id%>').replaceWith('<%= escape_javascript render( partial: "admin/orders/status", locals: {order: @order}) %>');
