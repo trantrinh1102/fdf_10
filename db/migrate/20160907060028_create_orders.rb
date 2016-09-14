@@ -2,7 +2,7 @@ class CreateOrders < ActiveRecord::Migration
   def change
     create_table :orders do |t|
       t.references :user, index: true, foreign_key: true
-      t.integer :status
+      t.integer :status, default: 0, null: false
       t.text :shipping_address
       t.float :total_pay
 

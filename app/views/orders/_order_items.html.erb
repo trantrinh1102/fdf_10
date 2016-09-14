@@ -1,0 +1,25 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th><%= t ".number_order" %></th>
+      <th><%= t ".category" %></th>
+      <th><%= t ".name" %></th>
+      <th><%= t ".image" %></th>
+      <th><%= t ".quantity" %></th>
+      <th><%= t ".price" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% order_items.each_with_index do |item, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= item.product.category.try :name %></td>
+        <td><%= item.product.name %></td>
+        <td><%= image_tag item.product.image.thumb.url %></td>
+        <td class="text-center"><%= item.quantity %></td>
+        <td class="text-center">
+          <strong><%= number_to_currency item.total_price %></strong></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

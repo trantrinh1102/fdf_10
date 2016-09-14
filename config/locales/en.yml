@@ -20,11 +20,24 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  history_order: "History order"
   delete: "x"
   layouts:
     cart:
       add: "+"
       sub: "-"
+  orders:
+    order_items:
+      number_order: "NO."
+      category: "Category"
+      name: "Name"
+      image: "Image"
+      quantity: "Quantity"
+      price: "Price"
+    listing:
+      total: "Total pay"
+    new:
+      confirm: "Are you sure!"
   carts:
     listing:
       product: "Product"
@@ -33,6 +46,8 @@ en:
       add: "+"
       sub: "-"
       total: "Total"
+    index:
+      order: "Order"
   image_size: "should be less than 500KB"
   product_suggests:
     form:
@@ -48,6 +63,7 @@ en:
       update: "update successfully!"
       delete: "Delete successfully!"
       error: "cannot comment"
+      order: "Order successfully!"
   danger:
     category_not_exist: "category not exist"
     product_not_exist: "product not exist"

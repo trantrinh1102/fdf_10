@@ -18,7 +18,7 @@
             <tbody>
               <tr>
                 <td><span><%= item.quantity %></span></td>
-                <td><span>$<%= item.total_price %></span></td>
+                <td><span><%= number_to_currency item.total_price %></span></td>
                 <td>
                 <%= link_to t(".sub"), edit_cart_path(item.product),
                   remote: true,

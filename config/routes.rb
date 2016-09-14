@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :carts
   resources :products, only: [:show]
   resources :comments
+  resources :orders
   namespace :admin do
     root "users#index"
     resources :categories
