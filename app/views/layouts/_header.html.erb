@@ -28,6 +28,9 @@
                 new_user_registration_path %></li>
               <li><%= link_to (t "static_page.signin"),
                 new_user_session_path %></li>
+              <li><%= link_to t("static_page.btn-fb"),
+                user_facebook_omniauth_authorize_path,
+                class: "btn btn-primary" %></li>
             <% end %>
           </ul>
         </li>
