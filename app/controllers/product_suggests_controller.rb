@@ -1,5 +1,6 @@
 class ProductSuggestsController < ApplicationController
   load_and_authorize_resource
+  before_action :authenticate_login!
   before_action :load_categories, except: [:index, :destroy]
 
   def new

@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, ImageUploader
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
-  devise :omniauthable, omniauth_providers: [:facebook]
+  devise :omniauthable, omniauth_providers: [:google_oauth2, :facebook]
 
   has_many :product_suggests
   has_many :comments

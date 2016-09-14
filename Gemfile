@@ -25,6 +25,7 @@ gem "ratyrate"
 gem "omniauth"
 gem "omniauth-facebook"
 gem "social-share-button"
+gem "omniauth-google-oauth2"
 gem "chatwork"
 
 group :development, :test do

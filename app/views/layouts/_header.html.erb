@@ -32,6 +32,9 @@
               <li><%= link_to t("static_page.btn-fb"),
                 user_facebook_omniauth_authorize_path,
                 class: "btn btn-primary" %></li>
+              <li><%= link_to t("static_page.btn-gg"),
+                user_google_oauth2_omniauth_authorize_path,
+                class: "btn btn-danger" %></li>
             <% end %>
           </ul>
         </li>
