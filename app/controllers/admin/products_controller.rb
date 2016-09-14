@@ -8,7 +8,15 @@ class Admin::ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    @product_suggest =  ProductSuggest.find_by id: params[:product]
+    if @product_suggest
+      @product = Product.new  name: @product_suggest.product_name,
+        description: @product_suggest.description,
+        image: @product_suggest.image,
+        category_id: @product_suggest.category_id
+    else
+      @product = Product.new
+    end
   end
 
   def create

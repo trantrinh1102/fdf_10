@@ -39,7 +39,7 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to admin_root_path do %>
+        <li><%= link_to root_path do %>
           <i class="glyphicon glyphicon-home">
             <%=t "static_page.home" %></i>
           <% end %>
@@ -53,6 +53,8 @@
               admin_categories_path %></li>
             <li><%= link_to t("admin.products.products"),
               admin_products_path %></li>
+            <li><%= link_to t("admin.products_suggests.products_suggests"),
+              admin_product_suggests_path %></li>
            <% end %>
         <% end %>
       </ul>
