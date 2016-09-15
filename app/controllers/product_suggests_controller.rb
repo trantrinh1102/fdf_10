@@ -9,6 +9,10 @@ class ProductSuggestsController < ApplicationController
   def show
   end
 
+  def index
+    @product_suggests = current_user.product_suggests.page(params[:page]).per Settings.page_per
+  end
+
   def create
     @product_suggest = ProductSuggest.new product_suggest_params
     if @product_suggest.save
@@ -16,6 +20,17 @@ class ProductSuggestsController < ApplicationController
       redirect_to product_suggest_path @product_suggest
     else
       render :new
+    end
+  end
+
+  def destroy
+    if @product_suggest.destroy
+      flash.now[:success] = t "flash.success.delete"
+    end
+    respond_to do |format|
+      format.json do
+        render json: {flash: flash}
+      end
     end
   end
 
