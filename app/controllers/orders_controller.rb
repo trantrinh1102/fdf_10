@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
     if @cart.present?
       @order = Order.new order_params
       if @order.save
+        OrderMail.index(@order, current_user).deliver
         session.delete("cart")
         flash[:success] = t "flash.success.order"
         redirect_to order_path @order

@@ -26,6 +26,18 @@ en:
     cart:
       add: "+"
       sub: "-"
+  order_mail:
+    index:
+      order: "Order"
+      user: "User"
+      total: "Total pay"
+    order_items:
+      number_order: "NO."
+      category: "Category"
+      name: "Name"
+      image: "Image"
+      quantity: "Quantity"
+      price: "Price"
   orders:
     order_items:
       number_order: "NO."
