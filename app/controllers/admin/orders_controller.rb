@@ -1,4 +1,5 @@
 class Admin::OrdersController < ApplicationController
+  before_action :authenticate!, :authenticate_admin!
   load_and_authorize_resource
 
   def index

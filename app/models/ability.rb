@@ -8,6 +8,8 @@ class Ability
     else
       can :read, :all
       can [:create, :destroy], Comment
+      can [:create], Order
+      can [:create, :destroy], ProductSuggest
     end
   end
 end

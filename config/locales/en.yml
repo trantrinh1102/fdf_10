@@ -22,6 +22,7 @@
 en:
   history_order: "History order"
   delete: "x"
+  login_error: "Authentication failed!"
   layouts:
     cart:
       add: "+"
@@ -110,6 +111,8 @@ en:
     features: "Features"
     search: "Search"
     btn-fb: "Sign in with Facebook"
+    btn-gg: "Sign in with Google"
+    btn-twitter: "Sign in with Twitter"
   time:
     formats:
       short_date: "%m/%d/%Y"

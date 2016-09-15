@@ -1,4 +1,5 @@
 class Admin::ProductsController < ApplicationController
+  before_action :authenticate!, :authenticate_admin!
   before_action :load_categories, except: [:index, :destroy]
   before_action :load_product, only: [:edit, :destroy, :update]
 

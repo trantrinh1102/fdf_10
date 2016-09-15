@@ -41,4 +41,8 @@ class ApplicationController < ActionController::Base
   def authenticate!
     redirect_to root_url unless current_user
   end
+
+  def authenticate_login!
+    redirect_to new_user_session_path unless current_user
+  end
 end
