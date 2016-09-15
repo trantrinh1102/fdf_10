@@ -163,6 +163,12 @@ en:
       destroy:
         success: "destroy successfully!"
         danger: "You can not delete this products because it is being used!"
+    product_suggests:
+      product_suggests: "products suggest"
+      search: "Enter name products"
+      index:
+        title: "List products"
+        number_order: "No."
     users:
       users: "Users"
       new: "Add user"

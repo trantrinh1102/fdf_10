@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     resources :products
     resources :users
     resources :orders
+    resources :product_suggests
   end
 end

@@ -1,0 +1,51 @@
+<div class="content-page-admin">
+  <h2 class="text-center"><%= t ".title" %></h2>
+  <div class="flash-massage"></div>
+  <%= render "search" %>
+  <table class="table table-bordered" id="table-product">
+    <thead>
+      <tr>
+        <th class="text-center"><%= t ".number_order" %></th>
+        <th class="text-center"><%= t ".promoter" %></th>
+        <th class="text-center"><%= t ".category" %></th>
+        <th class="text-center"><%= t ".name" %></th>
+        <th class="text-center"><%= t ".description" %></th>
+        <th class="text-center"><%= t ".created_at" %></th>
+        <th class="text-center"><%= t ".image" %></th>
+        <th class="text-center"><%= t ".status" %></th>
+        <th class="text-center"><%= t ".action" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @product_suggests.each_with_index do |product_suggest, index| %>
+        <tr>
+          <td>
+            <%= number_order params[:page] , index %>
+          </td>
+          <td><%= product_suggest.user.try :name %></td>
+          <td><%= product_suggest.category.try :name %></td>
+          <td><%= product_suggest.product_name %></td>
+          <td><%= product_suggest.description %></td>
+          <td><%= l product_suggest.created_at, format: :short_date %></td>
+          <td><%= image_tag product_suggest.image.thumb.url %></td>
+          <td class="text-center">
+            <select  class="form-control status-product-sugges">
+              <% ProductSuggest.statuses.keys.each do |status| %>
+                <%= option_status status, product_suggest %>
+              <% end %>
+            </select>
+          </td>
+          <td class="text-center">
+          <button class="btn btn-danger btn-delete-product-suggest"
+            data-value="<%= product_suggest.id %>">
+            <%= t ".delete" %></button>
+          <%= link_to  t(".accept"),
+            new_admin_product_path(product: product_suggest.id),
+            class: "btn btn btn-primary btn-accept-product-suggest" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @product_suggests, theme: "twitter-bootstrap-3" %>
+</div>
