@@ -64,13 +64,15 @@ en:
       order: "Order"
   image_size: "should be less than 500KB"
   product_suggests:
+    product_suggests: "Suggest Product"
     form:
       save: "Save"
     show:
       product: "Product Name"
       back: "Back"
     new:
-      title: "New product suggest"
+      suggest: "Suggest more food or drink"
+      title: "list Suggestions"
   flash:
     success:
       create: "create successfully!"

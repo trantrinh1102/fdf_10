@@ -19,7 +19,7 @@
         <thead>
           <tr>
             <th><%= t ".product" %></th>
-            <th><%= t ".quantity" %></th>
+            <th></th>
             <th class="text-center"><%= t ".price" %></th>
           </tr>
         </thead>
@@ -35,10 +35,7 @@
                 </div>
               </div>
             </td>
-            <td class="col-sm-3 col-md-3" style="text-align: center">
-              <input type="email" class="form-control"
-                id="exampleInputEmail1" value="">
-            </td>
+            <td></td>
             <td class="col-sm-3 col-md-3 text-center">
               <strong><%= @product.price %></strong></td>
           </tr>
@@ -46,10 +43,11 @@
             <td></td>
             <td></td>
             <td>
-              <button type="button" class="btn btn-success">
+              <%= link_to cart_path(@product), remote: true,
+                method: "PUT", class: "btn btn-success" do %>
                 <span class="glyphicon glyphicon-shopping-cart"></span>
                 <%= t "cart.btn_cart" %>
-              </button>
+              <% end %>
             </td>
           </tr>
         </tbody>

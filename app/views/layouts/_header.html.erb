@@ -58,7 +58,10 @@
               admin_products_path %></li>
             <li><%= link_to t("admin.products_suggests.products_suggests"),
               admin_product_suggests_path %></li>
-           <% end %>
+          <% else %>
+            <li><%= link_to t("product_suggests.product_suggests"),
+              product_suggests_path %></li>
+          <% end %>
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
