@@ -19,6 +19,7 @@ class OrdersController < ApplicationController
       if @order.save
         OrderMail.index(@order, current_user).deliver
         session.delete("cart")
+        Chatwork.send_message @order
         flash[:success] = t "flash.success.order"
         redirect_to order_path @order
       else
@@ -36,3 +37,4 @@ class OrdersController < ApplicationController
       .merge! user: current_user, total_pay: @cart.total_price, cart: @cart
   end
 end
+

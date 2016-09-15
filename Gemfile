@@ -25,6 +25,7 @@ gem "ratyrate"
 gem "omniauth"
 gem "omniauth-facebook"
 gem "social-share-button"
+gem "chatwork"
 
 group :development, :test do
   gem "sqlite3",     "1.3.9"
