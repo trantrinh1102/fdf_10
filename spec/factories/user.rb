@@ -3,13 +3,13 @@ FactoryGirl.define do
     name "User"
     u.sequence(:email) { |n| "user#{n}@awesome.com"}
     password "12345678"
-    role 1
+    role 0
 
     factory :admin do
       name "Admin"
       email "admin@mail.com"
       password "12345678"
-      role 0
+      role 1
     end
   end
 end
