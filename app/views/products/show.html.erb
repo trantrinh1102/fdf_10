@@ -10,7 +10,9 @@
         <p><%= t "comment.comment" %></p>
         <%= render "comments/form_comment", object: @product %>
         <div class="comments">
-          <%= render @product.comments %>
+          <% if user_signed_in? %>
+            <%= render @product.comments %>
+            <% end %>
         </div>
       </div>
     </div>

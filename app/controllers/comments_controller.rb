@@ -4,12 +4,22 @@ class CommentsController < ApplicationController
   def create
     @product = Product.find_by id: comment_params[:product_id]
     @comment = @product.comments.build(comment_params)
+    # binding.pry
     if @comment.save
-      flash[:success] = t "flash.success.create"
-    else
-      flash[:success] = t "flash.success.error"
+      # flash[:success] = t "flash.success.create"
+      flash.now[:success] = t "flash.success.delete"
+
+    respond_to do |format|
+      format.json do
+        render json: {flash: flash}
+      end
     end
-    redirect_to @product
+    else
+      # flash[:success] = t "flash.success.error"
+      flash.now[:success] = t "flash.success.delete"
+
+    end
+    # redirect_to @product
   end
 
   def destroy
